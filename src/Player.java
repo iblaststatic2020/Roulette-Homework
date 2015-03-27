@@ -4,7 +4,16 @@ public class Player {
 	int chips = 1000;
 	String name;
 	String playerColor;
+	int winnings;
 	
+	public int getWinnings() {
+		return winnings;
+	}
+
+	public void setWinnings(int winnings) {
+		this.winnings = winnings;
+	}
+
 	public String getPlayerColor() {
 		return playerColor;
 	}
@@ -32,4 +41,6 @@ public class Player {
 	public Player(){
 		
 	}
+
+	
 }
