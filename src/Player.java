@@ -39,7 +39,7 @@ public class Player {
 	}
 
 	public Player(){
-		
+		setWinnings(0);
 	}
 
 	

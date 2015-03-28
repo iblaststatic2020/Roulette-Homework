@@ -6,7 +6,7 @@ public class Game {
 	int chips;
 	int spinValue;
 	int bet = 10;
-	int spinCount = 1;
+	int spinCount = 0;
 	public Game(){
 		wheel = new Wheel();
 		
@@ -19,6 +19,15 @@ public class Game {
 		
 		//determine how many turns to meet qualifying exit point.
 		//while (player.getWinnings() < (spinCount * 10) || player.getWinnings() == 0 ){
+		if(spinCount == 0){
+			System.out.println("The bet is:" + bet);
+			turn();
+			spinCount++;
+			System.out.println("Spin Count: " + spinCount );
+			System.out.println("winnings: " + player.getWinnings());
+			System.out.println("You have won "+ player.getWinnings() / spinCount + " chips per turn."+ "\n");
+			
+		}
 		while (player.getWinnings() / spinCount < 10){
 		System.out.println("The bet is:" + bet);
 		turn();
@@ -41,15 +50,8 @@ public class Game {
 			
 				chips = player.getChips();
 				
-				
-				
 				spin();
-				
-				
 			
-		
-		
-		
 	}
 
 	private void spin() {
@@ -65,12 +67,12 @@ public class Game {
 		String wheelColor = wheel.getColor();
 		String playerColor = player.getPlayerColor();
 		if(wheelColor.equalsIgnoreCase(playerColor)){
-			player.setWinnings((bet + bet) / 2);
+			player.setWinnings(player.getWinnings() + bet);
 			player.setChips(chips + bet);
 		}else if(!wheelColor.equalsIgnoreCase(playerColor)){
-			
+			player.setWinnings(player.getWinnings() - bet);
 			player.setChips(chips - bet);
-			bet = bet += bet;
+			bet = bet + 10;
 		}
 		
 	}
