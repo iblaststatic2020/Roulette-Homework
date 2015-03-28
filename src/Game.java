@@ -21,7 +21,7 @@ public class Game {
 		//while (player.getWinnings() < (spinCount * 10) || player.getWinnings() == 0 ){
 		if(spinCount == 0){
 			System.out.println("The bet is:" + bet);
-			turn();
+			spin();
 			spinCount++;
 			System.out.println("Spin Count: " + spinCount );
 			System.out.println("winnings: " + player.getWinnings());
@@ -30,7 +30,7 @@ public class Game {
 		}
 		while (player.getWinnings() / spinCount < 10){
 		System.out.println("The bet is:" + bet);
-		turn();
+		spin();
 		spinCount++;
 		System.out.println("Spin Count: " + spinCount );
 		System.out.println("winnings: " + player.getWinnings());
@@ -45,14 +45,7 @@ public class Game {
 		System.out.println("You have won "+ player.getWinnings() / spinCount + " chips per turn.");
 	}
 
-	private void turn() {
-		// TODO Auto-generated method stub
-			
-				chips = player.getChips();
-				
-				spin();
-			
-	}
+	
 
 	private void spin() {
 		// TODO Auto-generated method stub
