@@ -8,7 +8,7 @@ public class Game {
 	int bet = 10;
 	int spinCount = 0;
 	public Game(){
-		wheel = new Wheel();
+		wheel = Wheel.getInstance();
 		
 		player = new Player();
 		player.setName("Chris");

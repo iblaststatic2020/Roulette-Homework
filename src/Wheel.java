@@ -7,9 +7,9 @@ public class Wheel {
 	private String color;
 	private int spinValue;
 	private List<Integer> valueList = new ArrayList<Integer>();
+	private static Wheel INSTANCE;
 	
-	
-	public Wheel(){
+	private Wheel(){
 		
 		
 		for(int i = 0; i < 33; i++){
@@ -22,6 +22,12 @@ public class Wheel {
 		
 	}
 	
+	public static Wheel getInstance(){
+		if(INSTANCE == null){
+			INSTANCE = new Wheel();
+		}
+		return INSTANCE;
+	}
 	
 	
 	public int getSpinValue() {
